@@ -11,7 +11,7 @@ def index():
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Chetan@123",
+    password="password",
     database="library"
 )
 
@@ -104,7 +104,7 @@ def renew_membership_in_db(ssn, new_expiry_date):
         # SQL query to update the expiry date for the specified member
         sql = "UPDATE Member SET ExpiryDate = %s WHERE SSN = %s"
         val = (new_expiry_date, ssn)
-        
+
         # Execute the query
         mycursor.execute(sql, val)
 
