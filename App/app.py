@@ -9,9 +9,9 @@ def index():
 
 # Establish MySQL connection
 mydb = mysql.connector.connect(
-    host="localhost",
+    host="Chetans-MacBook-Air.local",
     user="root",
-    password="password",
+    password="Password",
     database="library"
 )
 
@@ -249,7 +249,6 @@ def renew_membership():
             return render_template('renew_membership.html', error=error)
 
     return render_template('renew_membership.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
