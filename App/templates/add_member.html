@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Member</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Member</h1>
+        <form action="/add_member" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="ssn">SSN:</label>
+            <input type="text" id="ssn" name="ssn" required><br><br>
+
+            <label for="campus_address">Campus Address:</label>
+            <input type="text" id="campus_address" name="campus_address" required><br><br>
+
+            <label for="home_address">Home Address:</label>
+            <input type="text" id="home_address" name="home_address" required><br><br>
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+            <label for="member_id">Member ID:</label>
+            <input type="text" id="member_id" name="member_id" required><br><br>
+
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="date" id="expiry_date" name="expiry_date" required><br><br>
+
+            <label for="is_prof">Is Professor (Y/N):</label>
+            <input type="text" id="is_prof" name="is_prof" maxlength="1" required><br><br>
+
+            <label for="is_member_active">Is Member Active (Y/N):</label>
+            <input type="text" id="is_member_active" name="is_member_active" maxlength="1" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <!-- Error messages to display -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

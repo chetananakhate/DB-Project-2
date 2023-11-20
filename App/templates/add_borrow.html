@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Borrow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Borrow</h1>
+        <form action="/add_borrow" method="POST">
+            <label for="issue_id">Issue ID:</label>
+            <input type="text" id="issue_id" name="issue_id" required><br><br>
+
+            <label for="ssn">Member SSN:</label>
+            <input type="text" id="ssn" name="ssn" required><br><br>
+
+            <label for="staff_id">Staff ID:</label>
+            <input type="text" id="staff_id" name="staff_id" required><br><br>
+
+            <label for="isbn">Book ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required><br><br>
+
+            <label for="issue_date">Issue Date:</label>
+            <input type="date" id="issue_date" name="issue_date" required><br><br>
+
+            <label for="due_date">Due Date:</label>
+            <input type="date" id="due_date" name="due_date" required><br><br>
+
+            <label for="notice_date">Notice Date:</label>
+            <input type="date" id="notice_date" name="notice_date"><br><br>
+
+            <label for="is_returned">Is Returned (Y/N):</label>
+            <input type="text" id="is_returned" name="is_returned" maxlength="1" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <!-- Error messages to display -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

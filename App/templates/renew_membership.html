@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renew Membership</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Renew Membership</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/renew_membership" method="POST">
+            <label for="ssn">SSN:</label>
+            <input type="text" id="ssn" name="ssn" required><br><br>
+
+            <label for="expiry_date">New Expiry Date:</label>
+            <input type="date" id="expiry_date" name="expiry_date" required><br><br>
+
+            <input type="submit" value="Renew Membership">
+        </form>
+    </div>
+</body>
+</html>

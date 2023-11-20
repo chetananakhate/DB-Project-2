@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Book</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/add_book" method="POST">
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required><br><br>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="author_id">Author ID:</label>
+            <input type="text" id="author_id" name="author_id" required><br><br>
+
+            <label for="subject_area">Subject Area:</label>
+            <input type="text" id="subject_area" name="subject_area" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="5" cols="50" required></textarea><br><br>
+
+            <label for="book_type">Book Type:</label>
+            <input type="text" id="book_type" name="book_type" required><br><br>
+
+            <label for="is_lendable">Is Lendable (Y/N):</label>
+            <input type="text" id="is_lendable" name="is_lendable" required><br><br>
+
+            <label for="language">Language:</label>
+            <input type="text" id="language" name="language" required><br><br>
+
+            <label for="binding">Binding:</label>
+            <input type="text" id="binding" name="binding" required><br><br>
+
+            <label for="edition">Edition:</label>
+            <input type="text" id="edition" name="edition" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Return Book</h1>
+        <form action="/return_book" method="POST">
+            <label for="issue_id">Issue ID:</label>
+            <input type="text" id="issue_id" name="issue_id" required><br><br>
+
+            <label for="isbn">Book ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required><br><br>
+
+            <label for="return_date">Return Date:</label>
+            <input type="date" id="return_date" name="return_date" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
