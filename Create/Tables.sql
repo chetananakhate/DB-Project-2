@@ -1,7 +1,3 @@
--- CREATE DATABASE library;
-
--- use library;
-
 CREATE TABLE Member (Name varchar(50), SSN varchar(10), CampusAddress varchar(100), HomeAddress varchar(100), PhoneNumber varchar(10), MemberID varchar(20), ExpiryDate date, Is_prof varchar(1), IsMemberActive varchar(1), PRIMARY KEY(SSN)); 
 
 CREATE TABLE Staff (StaffID varchar(10), SSN varchar(10), Position varchar(40), PRIMARY KEY(StaffId), FOREIGN KEY f1 (SSN) REFERENCES Member(SSN));

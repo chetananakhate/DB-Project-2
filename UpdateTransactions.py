@@ -1,6 +1,5 @@
 import mysql.connector
 
-
 conn = mysql.connector.connect(
     host='your_host',
     user='your_username',
@@ -152,8 +151,8 @@ def return_book(issue_id, return_date):
 
 
 def renew_membership(member_ssn, new_expiry_date):
+    
     try:
-
         cursor = conn.cursor()
 
         # Update the membership expiry date for the member
@@ -174,7 +173,7 @@ def renew_membership(member_ssn, new_expiry_date):
 
 
 # ------------------------
-# Example usage
+
 add_new_member(
     'John Doe',
     '1234567890',
@@ -201,11 +200,11 @@ add_new_book(
 )
 
 borrow_book(
-    '123456789',  # Member SSN
-    'S001',       # Staff ID
-    '9780123456789',  # Book ISBN
-    '2023-11-19',      # Issue date (YYYY-MM-DD)
-    '2023-12-03'       # Due date (YYYY-MM-DD)
+    '123456789',  
+    'S001',       
+    '9780123456789',
+    '2023-11-19',   
+    '2023-12-03'
 )
 
 
